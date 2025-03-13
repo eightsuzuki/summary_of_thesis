@@ -8,7 +8,7 @@
 
 ### **1. 背景**
 
-![image.png](Not%20All%20Language%20Model%20Features%20Are%20Linear%20173821c4096b80559e2ec5a00cd28710/image.png)
+![image.png](<image/Not All Language Model Features Are Linear 173821c4096b80559e2ec5a00cd28710/image.png>)
 
 ### **従来の仮説: 線形表現仮説**
 
