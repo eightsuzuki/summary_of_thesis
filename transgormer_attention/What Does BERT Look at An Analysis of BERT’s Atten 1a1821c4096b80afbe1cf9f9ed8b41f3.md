@@ -1,6 +1,6 @@
-# What Does BERT Look at? An Analysis of BERT’s Attention
+# What Does BERT Look at? An Analysis of BERT's Attention
 
-以下に、論文「What Does BERT Look At? An Analysis of BERT’s Attention」の各章ごとの内容を、数式や背景も交えながら詳しく説明します。
+以下に、論文「What Does BERT Look At? An Analysis of BERT's Attention」の各章ごとの内容を、数式や背景も交えながら詳しく説明します。
 
 ---
 
@@ -25,20 +25,26 @@
 
 - **Transformerの自己注意機構:**
     
-    各入力トークン hih_i は、以下のような線形変換によりクエリ qiq_i、キー kik_i、バリュー viv_i に変換されます。
+    各入力トークン $h_i$ は、以下のような線形変換によりクエリ $q_i$、キー $k_i$、バリュー $v_i$ に変換されます。
+        
+    $$
+    q_i = W^Q h_i,\quad k_i = W^K h_i,\quad v_i = W^V h_i
+    $$
     
-    qi=WQhi,ki=WKhi,vi=WVhiq_i = W^Q h_i,\quad k_i = W^K h_i,\quad v_i = W^V h_i
+    ここで $W^Q$、$W^K$、$W^V$ は学習可能な重み行列です。これらの行列は、モデルの学習過程で勾配降下法により最適化されます。
     
-    ここで WQW^Q、WKW^K、WVW^V は学習可能な重み行列です。
+    次に、トークン $i$ が他の各トークン $j$ にどの程度注意を向けるかは、クエリとキーの内積をソフトマックスで正規化することで決まります。
     
-    次に、トークン ii が他の各トークン jj にどの程度注意を向けるかは、クエリとキーの内積をソフトマックスで正規化することで決まります。
-    
-    αij=exp⁡(qi⊤kj)∑l=1nexp⁡(qi⊤kl)\alpha_{ij} = \frac{\exp\left(q_i^\top k_j\right)}{\sum_{l=1}^{n} \exp\left(q_i^\top k_l\right)}
-    
-    最終的に、各トークンの出力表現 oio_i はバリューの重み付き和として得られます。
-    
-    oi=∑j=1nαijvjo_i = \sum_{j=1}^{n} \alpha_{ij} v_j
-    
+    $$
+    \alpha_{ij} = \frac{\exp\left(q_i^\top k_j\right)}{\sum_{l=1}^{n} \exp\left(q_i^\top k_l\right)}
+    $$
+        
+    最終的に、各トークンの出力表現 $o_i$ はバリューの重み付き和として得られます。
+        
+    $$
+    o_i = \sum_{j=1}^{n} \alpha_{ij} v_j
+    $$
+        
 - **BERTの特徴:**
     
     BERTは、Transformerをベースにしており、入力前に[CLS]（文全体の表現を集約）や[SEP]（文の区切りを示す）といった特殊トークンを追加します。さらに、事前学習としてMasked Language Modeling（MLM）やNext Sentence Prediction（NSP）のタスクを用いて膨大なデータから学習を行っています。これらの前処理やタスク設定が、後述するアテンションの解析においても重要な役割を果たします。
@@ -55,26 +61,15 @@
 - **観察:**
 多くのヘッドは、現在のトークン自体にはあまり注意を向けず、直前または直後のトークンに強い注意を与える傾向が見られます。
 - **数式の背景:**
-これは、各ヘッドが  という注意重みを計算する際に、内積  が近接位置のトークンで大きくなるように学習しているためと考えられます。実際、特定の層（例：層2、4、7、8）では前のトークンに50%以上の注意が集中するヘッドが観察されています。
-    
-    αij\alpha_{ij}
-    
-    qi⊤kjq_i^\top k_j
-    
+これは、各ヘッドが $\alpha_{ij}$ という注意重みを計算する際に、内積 $q_i^\top k_j$ が近接位置のトークンで大きくなるように学習しているためと考えられます。実際、特定の層（例：層2、4、7、8）では前のトークンに50%以上の注意が集中するヘッドが観察されています。
 
 ### 3.2 特殊トークン（[CLS], [SEP]）への注意
 
 - **観察:**
 ある層のヘッド、特に中～深層では、[SEP]や[CLS]などの特殊トークンに対して、通常の単語以上の注意が向けられることが確認されました。
 - **解釈:**
-    - たとえば、[SEP]トークンは文中で数回しか現れないため、通常なら均等に注意が分散すると  程度ですが、実際には50%以上の割合で注意が向けられることもあります。
-        
-        164\frac{1}{64}
-        
-    - 勾配解析（後述）により、[SEP]への注意を変化させても損失  に与える影響が小さいことが示され、[SEP]は「no-op」として機能している可能性が示唆されます。
-        
-        LL
-        
+    - たとえば、[SEP]トークンは文中で数回しか現れないため、通常なら均等に注意が分散すると $\frac{1}{64}$ 程度ですが、実際には50%以上の割合で注意が向けられることもあります。
+    - 勾配解析（後述）により、[SEP]への注意を変化させても損失 $L$ に与える影響が小さいことが示され、[SEP]は「no-op」として機能している可能性が示唆されます。
 
 ### 3.3 注意分布のエントロピー
 
@@ -97,10 +92,11 @@
     
 - **最も注意が向けられた単語の予測:**
     
-    各ヘッドについて、ある単語 jj に対して最も高い注意重み αij\alpha_{ij} を持つ単語 ii を、その単語の「ヘッド」として予測します。
+    各ヘッドについて、ある単語 $j$ に対して最も高い注意重み $\alpha_{ij}$ を持つ単語 $i$ を、その単語の「ヘッド」として予測します。
     
-    i^=argmax⁡iαij\hat{i} = \operatorname{argmax}_i \alpha_{ij}
-    
+    $$
+    \hat{i} = \operatorname{argmax}_i \alpha_{ij}
+    $$
 
 ### 4.2 依存構文解析への応用
 
@@ -126,22 +122,26 @@ CoNLL-2012のデータセットを用い、各ヘッドがコアリファレン�
 
 - **モデル:**
     
-    各ヘッドの注意重み αij(k)\alpha_{ij}^{(k)}（ヘッド kk の ii から jj への注意）を線形に組み合わせ、ある単語 jj のヘッドとして単語 ii が選ばれる確率 p(i∣j)p(i|j) を以下のように定義します。
-    
-    p(i∣j)∝exp⁡(∑k=1nwk αij(k)+uk αji(k))p(i|j) \propto \exp\left(\sum_{k=1}^{n} w_k\, \alpha_{ij}^{(k)} + u_k\, \alpha_{ji}^{(k)}\right)
-    
-    ここで、wkw_k と uku_k は学習可能な重みパラメータであり、両方向（候補ヘッドから依存語、依存語から候補ヘッド）の情報を組み合わせています。
+    各ヘッドの注意重み $\alpha_{ij}^{(k)}$（ヘッド $k$ の $i$ から $j$ への注意）を線形に組み合わせ、ある単語 $j$ のヘッドとして単語 $i$ が選ばれる確率 $p(i|j)$ を以下のように定義します。
+        
+    $$
+    p(i|j) \propto \exp\left(\sum_{k=1}^{n} w_k\, \alpha_{ij}^{(k)} + u_k\, \alpha_{ji}^{(k)}\right)
+    $$
+        
+    ここで、$w_k$ と $u_k$ は学習可能な重みパラメータであり、両方向（候補ヘッドから依存語、依存語から候補ヘッド）の情報を組み合わせています。
     
 
 ### 5.2 Attention-and-Words Probe
 
 - **拡張:**
     
-    上記のAttention-Only Probeに加え、各単語の意味情報として事前学習済みのGloVe埋め込み vv を組み込みます。単語 ii と jj の埋め込みを連結（vi⊕vjv_i \oplus v_j）し、その情報に基づいて各ヘッドの重み付けを調整します。
+    上記のAttention-Only Probeに加え、各単語の意味情報として事前学習済みのGloVe埋め込み $v$ を組み込みます。単語 $i$ と $j$ の埋め込みを連結（$v_i \oplus v_j$）し、その情報に基づいて各ヘッドの重み付けを調整します。
     
-    p(i∣j)∝exp⁡(∑k=1n[Wk⋅(vi⊕vj) αij(k)+Uk⋅(vi⊕vj) αji(k)])p(i|j) \propto \exp\left(\sum_{k=1}^{n} \left[ W_{k}\cdot (v_i \oplus v_j)\, \alpha_{ij}^{(k)} + U_{k}\cdot (v_i \oplus v_j)\, \alpha_{ji}^{(k)} \right]\right)
+    $$
+    p(i|j) \propto \exp\left(\sum_{k=1}^{n} \left[ W_{k}\cdot (v_i \oplus v_j)\, \alpha_{ij}^{(k)} + U_{k}\cdot (v_i \oplus v_j)\, \alpha_{ji}^{(k)} \right]\right)
+    $$
     
-    WkW_{k} と UkU_{k} は各ヘッドごとの重み行列です。このモデルにより、単語間の意味的類似性とアテンションパターンの両面から依存関係を予測することが可能になります。
+    $W_{k}$ と $U_{k}$ は各ヘッドごとの重み行列です。このモデルにより、単語間の意味的類似性とアテンションパターンの両面から依存関係を予測することが可能になります。
     
 - **評価:**
     
@@ -158,15 +158,19 @@ CoNLL-2012のデータセットを用い、各ヘッドがコアリファレン�
 
 - **定義:**
     
-    2つのヘッド HiH_i と HjH_j の間の距離は、各トークンに対する注意分布の違いをJensen-Shannon Divergence（JS Divergence）を用いて評価し、全トークンについて合計したものと定義されます。
+    2つのヘッド $H_i$ と $H_j$ の間の距離は、各トークンに対する注意分布の違いをJensen-Shannon Divergence（JS Divergence）を用いて評価し、全トークンについて合計したものと定義されます。
     
-    DJS(Hi,Hj)=∑token∈dataJS(Hi(token)∥Hj(token))D_{JS}(H_i, H_j) = \sum_{\text{token} \in \text{data}} JS\left(H_i(\text{token}) \parallel H_j(\text{token})\right)
+    $$
+    D_{JS}(H_i, H_j) = \sum_{\text{token} \in \text{data}} JS\left(H_i(\text{token}) \parallel H_j(\text{token})\right)
+    $$
     
-    ここで、JS Divergenceは2つの確率分布 PP と QQ に対して、
+    ここで、JS Divergenceは2つの確率分布 $P$ と $Q$ に対して、
     
-    JS(P∥Q)=12DKL(P∥M)+12DKL(Q∥M)JS(P \parallel Q) = \frac{1}{2} D_{KL}(P \parallel M) + \frac{1}{2} D_{KL}(Q \parallel M)
+    $$
+    JS(P \parallel Q) = \frac{1}{2} D_{KL}(P \parallel M) + \frac{1}{2} D_{KL}(Q \parallel M)
+    $$
     
-    （M=12(P+Q)M = \frac{1}{2}(P + Q)）で計算され、対称性や有界性などの利点があります。
+    （$M = \frac{1}{2}(P + Q)$）で計算され、対称性や有界性などの利点があります。
     
 - **解釈:**
     - ヘッド間の距離が小さい＝類似した注意分布を持つ（同じような機能を果たしている）。

@@ -13,8 +13,9 @@
 ### **従来の仮説: 線形表現仮説**
 
 - **線形表現仮説**では、特徴は一次元の線形空間に埋め込まれると考えられていました。例えば、次のような線形操作が可能です：
-    
+    $$
     f(king)−f(man)+f(woman)=f(queen)f(\text{king}) - f(\text{man}) + f(\text{woman}) = f(\text{queen})
+    $$
     
 - 本研究では、この一次元仮説を拡張し、多次元特徴の存在を検討します。
 
@@ -24,44 +25,31 @@
 
 ### **多次元特徴の定義**
 
-- 特徴  は、入力空間の部分集合から  への写像：
+- 特徴 $\mathbf{f}$ は、入力空間の部分集合から $\mathbb{R}^{d_f}$ への写像：
+    $$
+    \mathbf{f} : T \to \mathbb{R}^{d_f}
+    $$
     
-    f\mathbf{f}
+- 特徴のスパース性 ： $s$
+    $$
+    s = 1 - P(\text{feature is active})
+    $$
     
-    Rdf\mathbb{R}^{d_f}
-    
-    f:T→Rdf\mathbf{f} : T \to \mathbb{R}^{d_f}
-    
-- 特徴のスパース性 ：
-    
-    ss
-    
-    s=1−P(feature is active)s = 1 - P(\text{feature is active})
-    
-- 特徴  が分離不可能である場合、以下を満たさない：
+- 特徴 $\mathbf{f}$ が分離不可能である場合、以下を満たさない：
 
-（ は統計的に独立な部分特徴  に分解できない。）
+（ $\mathbf{f}$ は統計的に独立な部分特徴 $\mathbf{a}, \mathbf{b}$ に分解できない。）
+    $$    
+    p(\mathbf{a}, \mathbf{b}) = p(\mathbf{a}) \cdot p(\mathbf{b})
+    $$
     
-    f\mathbf{f}
-    
-    p(a,b)=p(a)⋅p(b)p(\mathbf{a}, \mathbf{b}) = p(\mathbf{a}) \cdot p(\mathbf{b})
-    
-    f\mathbf{f}
-    
-    a,b\mathbf{a}, \mathbf{b}
-    
-
 ### **還元不可能な特徴**
 
-- 特徴  が還元可能である条件：
+- 特徴 $\mathbf{f}$ が還元可能である条件：
 
-ここで、 は互いに重ならない分布。
-    
-    f\mathbf{f}
-    
-    p(a,b)=w⋅p1(a,b)+(1−w)⋅p2(a,b)p(\mathbf{a}, \mathbf{b}) = w \cdot p_1(\mathbf{a}, \mathbf{b}) + (1-w) \cdot p_2(\mathbf{a}, \mathbf{b})
-    
-    p1,p2p_1, p_2
+ここで、$p_1, p_2$ は互いに重ならない分布。
+    $$
+    p(\mathbf{a}, \mathbf{b}) = w \cdot p_1(\mathbf{a}, \mathbf{b}) + (1-w) \cdot p_2(\mathbf{a}, \mathbf{b})
+    $$
     
 - 還元不可能とは、上述の条件を満たさない特徴を指します。
 
@@ -72,34 +60,26 @@
 ### **スパースオートエンコーダ (SAE)**
 
 スパースオートエンコーダは、過完備な基底を用いて特徴を分解します。損失関数は以下のように定義されます：
-
-DL(Xi,l)=arg⁡min⁡E,D∑xi,l∈Xi,l[∥xi,l−D⋅ReLU(E⋅xi,l)∥22+λ∥ReLU(E⋅xi,l)∥0]DL(X_{i,l}) = \arg\min_{\mathbf{E}, \mathbf{D}} \sum_{\mathbf{x}_{i,l} \in X_{i,l}} \left[ \|\mathbf{x}_{i,l} - \mathbf{D} \cdot \text{ReLU}(\mathbf{E} \cdot \mathbf{x}_{i,l})\|_2^2 + \lambda \|\text{ReLU}(\mathbf{E} \cdot \mathbf{x}_{i,l})\|_0 \right]
-
-- **第1項**: 再構成誤差。隠れ状態  を辞書行列  で再構成する際の誤差。
-    
-    xi,l\mathbf{x}_{i,l}
-    
-    D\mathbf{D}
+$$
+DL(X_{i,l}) = \arg\min_{\mathbf{E}, \mathbf{D}} \sum_{\mathbf{x}_{i,l} \in X_{i,l}} \left[ \|\mathbf{x}_{i,l} - \mathbf{D} \cdot \text{ReLU}(\mathbf{E} \cdot \mathbf{x}_{i,l})\|_2^2 + \lambda \|\text{ReLU}(\mathbf{E} \cdot \mathbf{x}_{i,l})\|_0 \right]
+$$
+- **第1項**: 再構成誤差。隠れ状態 $\mathbf{x}_{i,l}$ を辞書行列 $\mathbf{D}$ で再構成する際の誤差。
     
 - **第2項**: スパース性ペナルティ。非ゼロの活性化を抑制。
 
 ### **円形表現の発見**
 
 - 曜日や月を円形にエンコード：
-    
-    circle(α)=[cos⁡(2παm),sin⁡(2παm)]\text{circle}(\alpha) = \left[ \cos\left(\frac{2\pi \alpha}{m}\right), \sin\left(\frac{2\pi \alpha}{m}\right) \right]
-    
-    - 曜日では 、月では 。
-        
-        m=7m = 7
-        
-        m=12m = 12
+    $$
+    \text{circle}(\alpha) = \left[ \cos\left(\frac{2\pi \alpha}{m}\right), \sin\left(\frac{2\pi \alpha}{m}\right) \right]
+    $$
+    - 曜日では $m = 7$、月では $m = 12$。
         
 - 円形プローブの学習：
-    
-    P=arg⁡min⁡P′∑xi,lj∥P′⋅Wi,l⋅xi,lj−circle(α)∥22\mathbf{P} = \arg\min_{\mathbf{P}'} \sum_{\mathbf{x}_{i,l}^j} \|\mathbf{P}' \cdot \mathbf{W}_{i,l} \cdot \mathbf{x}_{i,l}^j - \text{circle}(\alpha)\|_2^2
-    
-    ここで、Wi,l\mathbf{W}_{i,l} は主成分方向、P′\mathbf{P}' は円形表現を学習する線形変換行列。
+    $$
+    \mathbf{P} = \arg\min_{\mathbf{P}'} \sum_{\mathbf{x}_{i,l}^j} \|\mathbf{P}' \cdot \mathbf{W}_{i,l} \cdot \mathbf{x}_{i,l}^j - \text{circle}(\alpha)\|_2^2
+    $$
+    ここで、$\mathbf{W}_{i,l}$ は主成分方向、$\mathbf{P}'$ は円形表現を学習する線形変換行列。
     
 
 ---
