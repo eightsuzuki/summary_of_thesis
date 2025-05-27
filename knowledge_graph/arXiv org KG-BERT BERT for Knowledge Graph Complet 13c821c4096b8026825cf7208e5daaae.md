@@ -1,12 +1,6 @@
-<<<<<<<< HEAD:knowledge_graph/KG-BERT.md
 ![alt text](image/KG-BERT/image.png)
-========
+
 # arXiv.org KG-BERT: BERT for Knowledge Graph Completion
-
-![image.png](<./arXiv org KG-BERT BERT for Knowledge Graph Complet 13c821c4096b8026825cf7208e5daaae/image.png>)
-
-![image.png](<./arXiv org KG-BERT BERT for Knowledge Graph Complet 13c821c4096b8026825cf7208e5daaae/image 1.png>)
->>>>>>>> 3462e93 (不要なMarkdownファイルの削除と、他のファイル内の数式表記の修正を行いました。):knowledge_graph/arXiv org KG-BERT BERT for Knowledge Graph Complet 13c821c4096b8026825cf7208e5daaae.md
 
 **概要**
 
@@ -16,38 +10,22 @@
 
 1. **三重項の形式**
     
-    各エンティティと関係をテキストとして入力し、三重項 \((h, r, t)\) を一つの入力シーケンスとしてBERTに与えます。
+    各エンティティと関係をテキストとして入力し、三重項 $(h, r, t)$ を一つの入力シーケンスとしてBERTに与えます。
     
 2. **スコアリング関数**
     
     三重項のスコアリング関数は以下のように定義されます：
     ここで、$C$は[CLS]トークンに対応する最終的な隠れベクトルであり、$W$は分類層の重み行列です。
-    
-<<<<<<<< HEAD:knowledge_graph/KG-BERT.md
     ![alt text](image/KG-BERT/image-1.png)
-========
-    ![image.png](<./arXiv org KG-BERT BERT for Knowledge Graph Complet 13c821c4096b8026825cf7208e5daaae/image 2.png>)
-    
->>>>>>>> 3462e93 (不要なMarkdownファイルの削除と、他のファイル内の数式表記の修正を行いました。):knowledge_graph/arXiv org KG-BERT BERT for Knowledge Graph Complet 13c821c4096b8026825cf7208e5daaae.md
+
 3. **損失関数**
     
     クロスエントロピー損失を用いて、正例の三重項セット $D^+$ と負例の三重項セット $D^-$ に対して次のように計算されます：
     
     ここで、$y_{\tau}$は三重項のラベルで、$s_{\tau}$は三重項が正または負である確率です。
     
-<<<<<<<< HEAD:knowledge_graph/KG-BERT.md
     ![alt text](image/KG-BERT/image-2.png)
 4. **関係予測の損失関数**
     
-    関係予測では、与えられた2つのエンティティ \(h\) と \(t\) に対して、関係 \(r\) のスコアが以下で計算されます：
-    ![alt text](image/KG-BERT/image-3.png)
-========
-    ![image.png](<./arXiv org KG-BERT BERT for Knowledge Graph Complet 13c821c4096b8026825cf7208e5daaae/image 3.png>)
-    
-4. **関係予測の損失関数**
-    
     関係予測では、与えられた2つのエンティティ $h$ と $t$ に対して、関係 $r$ のスコアが以下で計算されます：
-    
-
-![image.png](<./arXiv org KG-BERT BERT for Knowledge Graph Complet 13c821c4096b8026825cf7208e5daaae/image 4.png>)
->>>>>>>> 3462e93 (不要なMarkdownファイルの削除と、他のファイル内の数式表記の修正を行いました。):knowledge_graph/arXiv org KG-BERT BERT for Knowledge Graph Complet 13c821c4096b8026825cf7208e5daaae.md
+    ![alt text](image/KG-BERT/image-3.png)
