@@ -1,3 +1,11 @@
+# SimKGC: Simple Contrastive Knowledge Graph Completion with Pre-trained Language Models
+
+**著者**: Liang Wang (Microsoft Research), Wei Zhao (Microsoft Research), Zhuoyu Wei (Microsoft Research), Jingming Liu (Microsoft Research)  
+**Submitted**: 4 Mar 2022  
+**arXiv**: [arXiv:2203.02167](https://arxiv.org/abs/2203.02167)
+
+
+
 この論文「SimKGC: Simple Contrastive Knowledge Graph Completion with Pre-trained Language Models」では、知識グラフの完成（KGC）を目指すために、事前学習済み言語モデルとコントラスト学習を組み合わせたSimKGCという新しい手法を提案しています。以下はその概要と理論について説明します。
 
 ### 概要

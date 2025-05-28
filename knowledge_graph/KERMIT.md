@@ -1,4 +1,18 @@
-# arXiv.org KERMIT: Knowledge Graph Completion of Enhanced Relation Mode…
+# KERMIT: Knowledge Graph Completion of Enhanced Relation Modeling with Inverse Transformation
+
+**著者**: 
+- Haotian Li¹ (哈尔滨工業大学)
+- Bin Yu² (哈尔滨工業大学(威海))
+- Yuliang Wei²,³ (哈尔滨工業大学(威海)/山東省産業ネットワークセキュリティ重点研究所) 
+- Kai Wang² (哈尔滨工業大学(威海))
+- Richard Yi Da Xu⁴ (香港バプティスト大学)
+- Bailing Wang¹ (哈尔滨工業大学)
+
+¹ Research Institute of Cyberspace Security, Harbin Institute of Technology, China  
+² School of Computer Science and Technology, Harbin Institute of Technology at Weihai, China  
+³ Shandong Key Laboratory of Industrial Network Security, China  
+⁴ Department of Mathematics, Hong Kong Baptist University, Hong Kong, China
+
 
 ---
 
