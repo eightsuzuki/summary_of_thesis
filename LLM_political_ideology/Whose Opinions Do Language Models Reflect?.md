@@ -1,5 +1,9 @@
 # Whose Opinions Do Language Models Reflect?
 
+**著者**: Shibani Santurkar (Stanford University), Esin Durmus (Google Research), Faisal Ladhak (Google Research), Cinoo Lee (Stanford University), Percy Liang (Stanford University), Tatsunori Hashimoto (Stanford University)  
+**arXiv**: [arXiv:2303.17548](https://arxiv.org/abs/2303.17548)
+
+
 ---
 
 ## まとめ

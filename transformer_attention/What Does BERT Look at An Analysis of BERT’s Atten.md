@@ -1,7 +1,7 @@
 # What Does BERT Look at? An Analysis of BERT's Attention
 
-以下に、論文「What Does BERT Look At? An Analysis of BERT's Attention」の各章ごとの内容を、数式や背景も交えながら詳しく説明します。
-
+**著者**: Kevin Clark (Stanford University), Urvashi Khandelwal (Stanford University), Omer Levy (Facebook AI Research), Christopher D. Manning (Stanford University)  
+**arXiv**: [arXiv:1906.04341](https://arxiv.org/abs/1906.04341) 
 ---
 
 ## 第1章: Introduction

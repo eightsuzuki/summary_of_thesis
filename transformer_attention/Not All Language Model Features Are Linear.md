@@ -1,5 +1,8 @@
 # Not All Language Model Features Are Linear
 
+**著者**: Joshua Engels (MIT), Eric J. Michaud (MIT), Isaac Liao (MIT), Wes Gurnee (MIT), Max Tegmark (MIT)  
+**arXiv**: [arXiv:2405.14860](https://arxiv.org/abs/2405.14860)
+
 ### 概要（数式を含む詳細な説明）
 
 この論文は、言語モデルが内部でどのように特徴を表現しているのかを明らかにし、多次元かつ還元不可能な特徴（non-separable and irreducible features）の存在を提案しています。以下に各セクションの主要内容を数式を用いて説明します。

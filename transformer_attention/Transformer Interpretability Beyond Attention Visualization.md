@@ -1,5 +1,8 @@
 # Transformer Interpretability Beyond Attention Visualization
 
+**著者**: Hila Chefer (Tel Aviv University), Shir Gur (Tel Aviv University), Lior Wolf (Tel Aviv University, Facebook)  
+**arXiv**: [arXiv:2012.09828](https://arxiv.org/abs/2012.09828)
+
 ### 論文の概要
 
 この研究は、Transformerネットワークの判断根拠を可視化するための新しい手法を提案するものです [cite: 3]。既存の手法の多くは、アテンションマップに依存していましたが [cite: 2]、それだけではモデルの挙動を完全に説明できないという問題がありました。提案手法は、**Deep Taylor Decomposition**という原理に基づいて各部分の関連性を計算し、それをネットワークの層を通して伝播させることで、より正確な可視化を実現します [cite: 4]。

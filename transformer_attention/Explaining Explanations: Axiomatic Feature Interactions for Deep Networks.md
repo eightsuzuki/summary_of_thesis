@@ -1,8 +1,11 @@
+# Explaining Explanations: Axiomatic Feature Interactions for Deep Networks
+
+**著者**: Joseph D. Janizek (University of Washington), Pascal Sturmfels (University of Washington), Su-In Lee (University of Washington)  
+**arXiv**: [arXiv:2002.04138](https://arxiv.org/abs/2002.04138)
+---
 https://arxiv.org/abs/2002.04138/
 Integrated Hessians (IH)っているIGを使って、入力iとjが出力に対してどれだけ相互も影響したかを表す。"painfully funny" というフレーズにおいて、"painfully" 単体では負の寄与を持ちますが、"funny" との間に正の相互作用を持つ。ヘッセ行列使ってる相互作用を計算しているから、二回微分して0になるReLUとかには使えないGELUには使える。
 ---
-# Explaining Explanations: Axiomatic Feature Interactions for Deep Networks
-
 この論文は、ディープニューラルネットワークの予測を解釈するための新しい手法「**Integrated Hessians (IH)**」を提案するものです [cite: 5]。従来の特徴量アトリビューション手法が「どの特徴量が重要か」を説明するのに対し、本手法は「特徴量がどのように相互作用して予測に影響を与えるか」という、より深いレベルでの説明を可能にすることを目的としています [cite: 3, 4]。
 
 以下に、その理論的背景、数式による定義、特性、および応用について詳細に解説します。

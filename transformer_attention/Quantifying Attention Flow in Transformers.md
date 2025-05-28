@@ -1,4 +1,7 @@
-# (Quantifying Attention Flow in Transformers)
+# Quantifying Attention Flow in Transformers
+
+**著者**: Samira Abnar (University of Amsterdam), Willem Zuidema (University of Amsterdam)  
+**arXiv**: [arXiv:2005.00928](https://arxiv.org/abs/2005.00928)  
 
 ---
 

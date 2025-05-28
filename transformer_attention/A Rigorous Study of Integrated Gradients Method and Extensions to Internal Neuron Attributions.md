@@ -1,5 +1,7 @@
-# A RIGOROUS STUDY OF INTEGRATED GRADIENTS METHOD AND EXTENSIONS TO INTERNAL NEURON ATTRIBUTIONS
-(Integrated Gradients手法の厳密な研究と内部ニューロンアトリビューションへの拡張)
+# A Rigorous Study of Integrated Gradients Method and Extensions to Internal Neuron Attributions
+
+**著者**: Mukund Sundararajan (Google Research), Ankur Taly (Google Research), Qiqi Yan (Google Research)  
+**arXiv**: [arXiv:1703.01365](https://arxiv.org/abs/1703.01365)
 
 ### 概要
 この論文は、深層学習（DL）モデルの解釈手法として広く利用されている**Integrated Gradients (IG)**の理論的基盤を厳密に再検証し、その正当性を強化すると同時に、実用的な拡張を提案する研究です。論文は主に、IGの優位性の根拠とされてきた**「唯一性」の主張に潜む理論的な欠陥を初めて明確に指摘**し、それを修正するための**新しい公理「NDP」を導入**することで、その理論基盤を再構築しました [cite: 4, 5, 23, 27]。さらに、実践で広く使われている「分布ベースライン」手法に対する公理を初めて定式化し [cite: 7, 32]、内部ニューロンの貢献度を「画像の特定領域」に絞って分析する、計算効率の高い新手法を提案・検証しています [cite: 8, 33]。

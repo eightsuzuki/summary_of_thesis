@@ -1,5 +1,7 @@
-# The political ideology of conversational AI: Converging evidence on ChatGPT’s pro-environmental, left-libertarian orientation
+# The political ideology of conversational AI: Converging evidence on ChatGPT's pro-environmental, left-libertarian orientation
 
+**著者**: Jochen Hartmann (Technical University of Munich, TUM School of Management, Arcisstr.), Jasper Schwenzow (University of Hamburg, Hamburg Business School, Moorweidenstrasse), Maximilian Witte (University of Hamburg, Hamburg Business School, Moorweidenstrasse)  
+**arXiv**: [arXiv:2301.01768](https://arxiv.org/abs/2301.01768) 
 ---
 
 ### **研究の概要**

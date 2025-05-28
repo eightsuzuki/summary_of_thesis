@@ -1,3 +1,9 @@
+# Understanding Higher-Order Correlations Among Semantic Components in Embeddings
+
+**著者**: Momose Oyama (京都大学), Hiroaki Yamagiwa (京都大学), Hidetoshi Shimodaira (京都大学)  
+**arXiv**: [arXiv:2409.19919](https://arxiv.org/abs/2409.19919)
+
+
 以下は、本論文「Understanding Higher-Order Correlations Among Semantic Components in Embeddings」の全体像および数式・実験結果・図表の詳細な解説です。なお、本文中の数式は省略せず、途中の関係式もできる限り補足して説明します。以下、各セクションごとに説明します。 citeturn0file0
 
 ---

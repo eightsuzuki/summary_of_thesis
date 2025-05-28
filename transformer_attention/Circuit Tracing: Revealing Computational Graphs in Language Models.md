@@ -1,5 +1,10 @@
-# Circuit Tracing: Revealing Computational Graphs in Language Models（Anthropic, 2025）
-![alt text](<image/Circuit Tracing: Revealing Computational Graphs in Language Models/image.png>)
+# Circuit Tracing: Revealing Computational Graphs in Language Models
+
+**著者**: Anthropic Research Team  
+**arXiv**: [arXiv:2402.17764](https://arxiv.org/abs/2402.17764)
+
+![alt text](<image/Circuit Tracing: Revealing Computational Graphs in Language Models/image.png>) 
+
 ## 1. 背景と目的
 
 近年、大規模言語モデルに対しては**機械論的解釈性**（mechanistic interpretability）の確立が求められています。これは「モデル内部で実際に実行される計算グラフを人間が解釈できる形で再構築する」ことを意味します。従来はTransformerの「注意ヘッド」や「MLPブロック」を解析単位とし、それぞれの挙動を調べる手法が主流でした。しかし、これらのユニットは多様な機能を併せ持つため、個々の機能が混在し解釈の精度が限定的でした。

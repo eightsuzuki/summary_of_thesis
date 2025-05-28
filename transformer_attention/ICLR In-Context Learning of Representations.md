@@ -1,6 +1,10 @@
 # ICLR: In-Context Learning of Representations
 
+**著者**: Core Francisco Park (スタンフォード大学), Andrew Lee (スタンフォード大学), Ekdeep Singh Lubana (スタンフォード大学), Yongyi Yang (スタンフォード大学), Maya Okawa (東京大学), Kento Nishi (スタンフォード大学), Martin Wattenberg (コロンビア大学), Hidenori Tanaka (東京大学/スタンフォード大学)  
+**arXiv**: [arXiv:2501.00070](https://arxiv.org/abs/2501.00070)
+
 ---
+
 
 ### **研究の概要**
 

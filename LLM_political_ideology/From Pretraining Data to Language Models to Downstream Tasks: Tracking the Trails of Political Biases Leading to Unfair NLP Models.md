@@ -1,5 +1,12 @@
 # From Pretraining Data to Language Models to Downstream Tasks: Tracking the Trails of Political Biases Leading to Unfair NLP Models
 
+**著者**: Shangbin Feng¹, Chan Young Park², Yuhan Liu³, Yulia Tsvetkov¹  
+¹ University of Washington  
+² Carnegie Mellon University  
+³ Xi’an Jiaotong University  
+{shangbin, yuliats}@cs.washington.edu, chanyoun@cs.cmu.edu, lyh6560@stu.xjtu.edu.cn  
+**arXiv**: [arXiv:2305.08283](https://arxiv.org/abs/2305.08283)
+
 ---
 
 ## まとめ
@@ -15,7 +22,7 @@
 - **政治コンパステストの活用**  
   政治スペクトル理論（Eysenck, Rokeach など）に基づき、62の政治命題に対する回答をもとに、各LMの政治的立場を「社会的値（social score）」と「経済的値（economic score）」の2次元空間（各軸[-10,10]）にマッピングします。  
   - 例：回答を {STRONG DISAGREE, DISAGREE, AGREE, STRONG AGREE} に分類し、重み付けによって2軸のスコアを算出。
-![alt text](image.png)
+![alt text](image/image56.png)
 
 - **エンコーダ型／デコーダ型モデルのプロービング**  
   - エンコーダ型LM（例：BERT, RoBERTa）はマスク充填を用い、マスク部分の上位確率トークンの集合から政治的傾向を推定。  
