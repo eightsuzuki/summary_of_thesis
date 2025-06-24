@@ -2,7 +2,9 @@
 **著者**: Sandipan Sikdar (RWTH Aachen University), 
 Parantapa Bhattacharya (University of Virginia) ,
 Kieran Heese (University of Virginia)  
-**会議**: Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (ACL-IJCNLP 2021)
+**会議**: Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (ACL-IJCNLP 2021)  
+**arXiv**: https://aclanthology.org/2021.acl-long.71/ 
+**GitHub**: https://github.com/parantapa/integrated-directional-gradients
 
 ---
 
