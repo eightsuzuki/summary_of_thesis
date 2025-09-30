@@ -1,4 +1,4 @@
-# Saliency Maps: Visualising Image Classification Models and Saliency Maps
+# Deep Inside Convolutional Networks: Visualising Image Classification Models and Saliency Maps
 
 **著者**: Karen Simonyan, Andrea Vedaldi, Andrew Zisserman  
 **公開**: arXiv 2013（v2: 2014）  
