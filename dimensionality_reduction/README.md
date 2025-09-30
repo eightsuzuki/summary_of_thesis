@@ -75,3 +75,11 @@ Notes on influences:
 - Local linear lineage: LLE → Hessian LLE; both inform manifold learning emphasizing locality.
 - Probabilistic neighbor lineage: SNE/t-SNE → inspired UMAP’s focus on neighborhood preservation (with different mathematical framing).
 - Diffusion lineage: Diffusion Maps → PHATE (via diffusion potentials), related in spirit to UMAP’s probabilistic graphs.
+
+## 比較メモ（日本語）
+
+- PCA: 主成分分析。分散最大の軸を取り出す。他の手法にはない利点が多いが、可視化用途では非線形な特徴を捉えにくい。分布の大域的特徴をよく反映する一方、局所的構造がノイズとしてつぶれがち。
+- t-SNE / UMAP: 各点の局所近傍との距離関係が保存されるように低次元配置を最適化。局所構造やクラスタの可視化に強い。連続的な「軌道」は分割されやすく、長距離の関係性はほぼ見ないため、クラスタ間の相対距離は乱数などで変わりやすい（再現性に注意）。
+- MDS: 多次元尺度構成法。全対全の距離関係を保存するように配置。データの「構造」を直接は見ないので、ノイズに弱く、クラスタや軌道などの特徴的構造とノイズを区別しない。
+- Diffusion Maps: 距離から遷移確率行列を構成し、グラフ上のランダムウォーク（拡散）を用いる。t ステップ後の分布（P^t）の違いをユークリッド距離として反映する座標を、P^t の固有ベクトルで得る。ノイズに強く、t により局所から大域までスケール調整可能。「軌道」構造を見つけやすい利点がある一方、異なる軌道を異なる次元に圧縮しがちで、2D/3D 可視化には不向きな場合がある。
+- Trajectory inference（Monocle2 など）: 木構造を前提に軌道を推定する手法。前提が適切か事前にわかりにくく、推定が不安定になり得る（初期化・ハイパラ・前処理の影響が大きい）。
