@@ -31,3 +31,4 @@
 ### 関連
 - 相対距離の学習表現: `Relative Positional Encoding (Shaw 2018).md`
 - 回転位相ベース: `RoPE: Rotary Position Embedding.md`
+

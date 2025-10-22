@@ -31,3 +31,4 @@ RoPE の長文外挿時の数値不安定・減衰挙動を緩和するため、
 ### 関連
 - 基礎: `RoPE: Rotary Position Embedding.md`
 - 代替/補間: `YaRN: Yet Another RoPE Extension.md`
+

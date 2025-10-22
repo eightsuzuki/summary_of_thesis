@@ -31,3 +31,4 @@
 ### 関連
 - 絶対・非学習: `Absolute Positional Encoding (sin-cos).md`
 - 長文外挿志向: `ALiBi: Attention with Linear Biases.md`, `RoPE: Rotary Position Embedding.md`, `xPos.md`, `YaRN: Yet Another RoPE Extension.md`
+

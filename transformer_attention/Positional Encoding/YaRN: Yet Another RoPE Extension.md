@@ -32,3 +32,4 @@ RoPE の周波数設計と補間戦略を工夫して長文への外挿を改善
 - 基礎: `RoPE: Rotary Position Embedding.md`
 - 近縁: `xPos.md`
 - 学習スキームによる延長: `PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training.md`
+

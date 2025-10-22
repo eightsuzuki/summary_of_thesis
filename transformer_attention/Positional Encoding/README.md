@@ -58,15 +58,3 @@
 ### 関連ノート（このリポジトリ）
 - RoPE と長文理解の挙動: `Massive Values in Self-Attention Modules are the Key to Contextual Knowledge Understanding.md`
 - 位置スキップ学習による文脈拡張: `PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training.md`
-
----
-
-### 個別ノートへのリンク
-- `Absolute Positional Encoding (sin-cos).md`
-- `Learned Positional Embedding.md`
-- `Relative Positional Encoding (Shaw 2018).md`
-- `Transformer-XL Relative Encoding.md`
-- `ALiBi: Attention with Linear Biases.md`
-- `RoPE: Rotary Position Embedding.md`
-- `xPos.md`
-- `YaRN: Yet Another RoPE Extension.md`

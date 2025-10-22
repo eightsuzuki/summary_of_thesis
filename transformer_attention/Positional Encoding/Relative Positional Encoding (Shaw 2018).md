@@ -32,3 +32,4 @@
 ### 関連
 - セグメント再帰と相対位置の拡張: `Transformer-XL Relative Encoding.md`
 - 他方式: `ALiBi: Attention with Linear Biases.md`, `RoPE: Rotary Position Embedding.md`
+

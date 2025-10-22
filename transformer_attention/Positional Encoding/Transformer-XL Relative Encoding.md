@@ -34,3 +34,4 @@ q_i^\top k_j \;\;+\; q_i^\top R_{i-j} \;\;+\; u^\top k_j \;\;+\; v^\top R_{i-j}
 ### 関連
 - 相対位置の原型: `Relative Positional Encoding (Shaw 2018).md`
 - 長文外挿の軽量代替: `ALiBi: Attention with Linear Biases.md`, `RoPE: Rotary Position Embedding.md`
+

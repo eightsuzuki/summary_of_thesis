@@ -32,3 +32,4 @@
 - 長文安定化・補間: `xPos.md`, `YaRN: Yet Another RoPE Extension.md`
 - 長文学習スキーム: `PoSE: Efficient Context Window Extension of LLMs via Positional Skip-wise Training.md`
 - RoPE とコンテキスト理解の実証的分析: `Massive Values in Self-Attention Modules are the Key to Contextual Knowledge Understanding.md`
+

@@ -34,3 +34,4 @@
 ### 関連
 - 学習型の絶対位置表現: `Learned Positional Embedding.md`
 - 相対位置・長文拡張系: `Relative Positional Encoding (Shaw 2018).md`, `Transformer-XL Relative Encoding.md`, `ALiBi: Attention with Linear Biases.md`, `RoPE: Rotary Position Embedding.md`
+
