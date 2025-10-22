@@ -13,6 +13,10 @@
 - `knowledge_graph_embedding/`
   - KGE（TransE系・Bilinear系・複素数/回転/畳み込み/階層/PLM連携・コントラスト学習など）
   - 比較表と年表: `knowledge_graph_embedding/README.md`
+- `word_embedding/`
+  - 単語埋め込み（Word2Vec/GloVe/FastText/Word2GM/Word2Box/ELMo）
+  - 点表現・確率分布表現・幾何学的領域表現・文脈依存表現
+  - 比較表と年表: `word_embedding/README.md`
 - `transformer_attention/`
   - アテンション解析・回路トレース・特徴幾何・注意フロー・表現学習の可視化/帰属
   - トピック比較と流れ: `transformer_attention/README.md`
