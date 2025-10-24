@@ -111,7 +111,8 @@ $$
 
 $$
 \mathbf{w}_i = \frac{C[i,:] + C[:,i]}{2}
-```
+$$
+
 
 #### 5. 次元削減（オプション）
 
@@ -136,12 +137,13 @@ $$
 **コサイン類似度**:
 $$
 \text{sim}(w_i, w_j) = \frac{\mathbf{w}_i \cdot \mathbf{w}_j}{||\mathbf{w}_i|| \cdot ||\mathbf{w}_j||}
-```
+$$
 
 **ユークリッド距離**:
 $$
 \text{dist}(w_i, w_j) = ||\mathbf{w}_i - \mathbf{w}_j||_2
-```
+$$
+
 
 ### 「キモ」と重要性
 
