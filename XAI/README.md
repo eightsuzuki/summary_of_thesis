@@ -17,6 +17,8 @@ This directory collects summaries of explanation methods for machine learning an
 | SHAP | Additive Shapley | Black-box or model-specific | Shapley axioms | Unified theory; TreeSHAP exact | Costly; background choice |
 | Influence Functions | Data influence | Grad/HVP access | Param/data sensitivity | Points to causal training data | H^{-1} approx; assumptions |
 | RAP | Relevance (bi-polar) | Model internals | Relative priority | Clear separation of (ir)relevance | Hyperparameters; variants |
+| Gemma Scope (SAEs) | Sparse decomposition | Model activations | Sparse feature decomposition | Interpretable features; open weights | Training cost; feature interpretability |
+| Attribution Graphs | Graph-based attribution | Model internals | Information flow | Visualizes internal flow | Computational cost; interpretation |
 
 ## Chronology and influences
 
@@ -28,5 +30,7 @@ This directory collects summaries of explanation methods for machine learning an
 - 2016–2019: Grad-CAM series – class-discriminative localization in CNNs.
 - 2017: Influence Functions – training-point responsibility analysis.
 - 2019/2020: RAP – relative (bi-polar) relevance propagation.
+- 2024: Gemma Scope – open sparse autoencoders for interpretability research.
+- 2025: Attribution Graphs – graph-based visualization of information flow in Transformers.
 
 See individual markdown files in this folder for equations and details.
