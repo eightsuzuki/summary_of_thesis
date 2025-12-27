@@ -198,3 +198,4 @@ z_new = kernel_pca.transform(x_new)  # カーネル計算が必要
 
 
 
+
