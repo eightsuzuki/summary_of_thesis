@@ -12,11 +12,12 @@ This directory collects summaries on attention mechanisms and interpretability i
 | Circuit analysis | Tracing computation | Circuit Tracing; Transformer Interpretability Beyond Attention | Mechanistic interp. |
 | Model maps | Landscape of LMs | Mapping 1,000+ LMs via Log-Likelihood | Taxonomy |
 | In-context learning | Representation formation | ICLR In-Context Learning of Representations | Dynamics of ICL |
+| Brain-LLM alignment | Computational path similarity | Scaling and context steer LLMs along the same computational path as the human brain | Layer depth ↔ temporal brain response |
 
 ## Chronology (illustrative)
 
 - 2017–2019: Early attention interpretability; attribution baselines adapted to transformers.
 - 2020–2022: Circuit analysis and attention flow methods; probing linearity of features; ICA-based views.
-- 2023–2025: Scaling studies and model maps; refined attributions and mechanistic tracing.
+- 2023–2025: Scaling studies and model maps; refined attributions and mechanistic tracing; brain-LLM computational path alignment.
 
 See individual markdowns for equations and experimental details.
