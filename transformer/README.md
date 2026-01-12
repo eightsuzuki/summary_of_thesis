@@ -1,6 +1,16 @@
-# Transformer Attention & Interpretability
+# Transformer
 
-This directory collects summaries on attention mechanisms and interpretability in transformers (attribution, circuits, attention flow, feature geometry, etc.).
+This directory collects summaries on transformers, including attention mechanisms, interpretability, visualization tools, positional encoding, and related topics.
+
+## Directory Structure
+
+- **Visualization/**: Tools and frameworks for visualizing transformer models (bertviz, ecco, TransformerLens, etc.)
+- **Interpretability/**: Methods and papers on transformer interpretability (AttnLRP, Circuit Tracing, etc.)
+- **Feature Analysis/**: Analysis of features and representations in transformers
+- **In-Context Learning/**: Research on in-context learning in transformers
+- **Model Analysis/**: Analysis of transformer models at scale
+- **Positional Encoding/**: Various positional encoding methods
+- **Political Ideology/**: Research on political biases and ideology in language models
 
 ## Quick comparison table (topics)
 
