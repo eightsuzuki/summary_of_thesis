@@ -1,6 +1,8 @@
 ### **[TransformerLens-2023](https://zenn.dev/50s_zerotohero/articles/19c46f9de55b54)**
 
-Neel Nanda らを中心とした **オープンソース研究コミュニティ（Mechanistic Interpretability）** によって開発された、Transformer 内部解析ライブラリ。
+Neel Nanda（Google DeepMind）らを中心とした **オープンソース研究コミュニティ（Mechanistic Interpretability）** によって開発された、Transformer 内部解析ライブラリ。
+
+**可視化粒度**: ヘッドレベル、ニューロンレベル、レイヤーレベル
 
 * GPT-2 などの Attention Head / Neuron の直接介入（patching）
 * 特定ヘッド・MLP が出力に与える因果的影響
@@ -14,6 +16,8 @@ LLM の挙動を「ブラックボックスの可視化」ではなく、**機�
 
 Machine Learning Tokyo によって公開された、**機械学習・深層学習・数学の概念を直感的に理解するための可視化ツール集**。
 
+**可視化粒度**: ニューロンレベル、モデル全体レベル
+
 * 勾配降下・最適化アルゴリズムの挙動
 * ニューラルネットワークの学習過程
 * 数学的概念（線形代数・確率）の動的可視化
@@ -26,6 +30,8 @@ Machine Learning Tokyo によって公開された、**機械学習・深層学�
 
 Harvard NLP / MIT 研究者らによって開発された、**BERT の内部表現探索ツール**。
 
+**可視化粒度**: トークンレベル、埋め込みレベル
+
 * トークンごとの埋め込みベクトルの近傍探索
 * Attention に基づく文脈依存表現の変化
 * 類似表現・意味空間の可視化
@@ -36,7 +42,9 @@ BERT が獲得した意味表現を **埋め込み空間ベースで探索**で�
 
 ### **[Transformers Interpret-2021](https://www.reddit.com/r/MachineLearning/comments/lipl90)**
 
-研究コミュニティ主導で提案された、**Transformer 向け説明可能 AI ツール群**。
+Reddit の r/MachineLearning コミュニティで共有された、**Transformer 向け説明可能 AI ツール群**（特定の大学・研究室に限定されないコミュニティ主導の提案）。
+
+**可視化粒度**: トークンレベル
 
 * Attention・勾配に基づくトークン寄与度
 * 入力摂動による予測変化の解析
@@ -50,6 +58,8 @@ Attention だけに依らない、**多角的な寄与度評価**を志向して
 
 Microsoft Research によって開発された、**機械学習モデル解釈の統一フレームワーク**。
 
+**可視化粒度**: トークン/特徴レベル、モデル全体レベル
+
 * グローバル解釈（モデル全体の傾向）
 * ローカル解釈（個別予測の理由）
 * 線形・非線形・ブラックボックスモデル対応
@@ -62,6 +72,8 @@ NLP 特化ではないが、**解釈手法を体系的に整理・適用**でき
 
 Apart Research によって公開された、**解釈性研究のためのスターターテンプレート集**。
 
+**可視化粒度**: ニューロン/特徴レベル、回路レベル
+
 * LLM 内部解析の実験コード例
 * Feature attribution / activation analysis
 * 回路・機能分解の初期実装
@@ -73,6 +85,8 @@ Apart Research によって公開された、**解釈性研究のためのスタ
 ### **[Awesome Transformer Visualization-2024](https://github.com/Ki-Seki/Awesome-Transformer-Visualization)**
 
 オープンソースコミュニティによって整備された、**Transformer / LLM 可視化ツールの網羅的まとめ**。
+
+**可視化粒度**: メタリソース（各種粒度のツールを網羅）
 
 * Attention 可視化
 * 内部表現・回路解析
@@ -90,6 +104,8 @@ OK。
 
 David Finkelstein によって開発された、MLP を含むニューラルネットワークの挙動を **視覚的に確認できる可視化デモ**。
 
+**可視化粒度**: 画素レベル、ニューロンレベル、レイヤーレベル
+
 * 入力（MNIST 画素）から出力クラスまでの重み付き伝播
 * 各ニューロンの活性化値の変化
 * 学習に伴う重み・判断境界の変化
@@ -100,6 +116,8 @@ David Finkelstein によって開発された、MLP を含むニューラルネ�
 ### **[AllenNLP Interpret-2019](https://github.com/allenai/allennlp)**
 
 Allen Institute for AI によって開発された、**NLP モデル予測の解釈・分析フレームワーク**。
+
+**可視化粒度**: トークンレベル
 
 * トークン重要度のサリエンシーマップ
 * 出力を変化させる最小入力変更（Adversarial）
@@ -112,6 +130,8 @@ Allen Institute for AI によって開発された、**NLP モデル予測の解
 
 Jesse Vig によって開発された、**Transformer の Attention 構造を可視化するツール**。
 
+**可視化粒度**: トークンレベル、ヘッドレベル、レイヤーレベル
+
 * 各レイヤー・各ヘッドの Attention 重み
 * トークン間の依存関係の構造
 * 層ごとの注意パターンの違い
@@ -119,9 +139,24 @@ Jesse Vig によって開発された、**Transformer の Attention 構造を可
 
 
 
+### **[Attention Rollout-2020](https://arxiv.org/abs/2005.00928)**
+
+Samira Abnar (現Apple)、Willem Zuidema（University of Amsterdam）によって提案された、**Transformer 内の入力トークンから高層埋め込みへの情報伝播を追跡する手法**。
+
+**可視化粒度**: トークンレベル、レイヤーレベル
+
+* 各層の注意重みを前層の注意重みと再帰的に掛け合わせて計算
+* 残差接続を考慮した単位行列の加算と重みの再正規化
+* 入力トークンの識別子が注意重みに基づいて線形的に結合されると仮定
+  生の注意重みが深い層で均一化する問題を克服し、入力トークンから高層埋め込みまでの情報の流れを集中的に解析できる。
+
+
+
 ### **[LLM-Architecture-2020s](https://bbycroft.net/llm)**
 
 Brendan Bycroft によって制作された、LLM（Transformer）アーキテクチャの構造を **網羅的に可視化したインタラクティブ資料**。
+
+**可視化粒度**: モデル全体レベル、レイヤーレベル、トークン次元
 
 * Embedding / Attention / MLP / Residual の全体構造
 * トークン次元・層次元を含む計算の流れ
@@ -132,7 +167,9 @@ Brendan Bycroft によって制作された、LLM（Transformer）アーキテ�
 
 ### **[ecco-2021](https://github.com/jalammar/ecco)**
 
-Jay Alammar によって開発された、**Transformer 系 NLP モデルの内部表現と寄与を探索する可視化ツール**。
+Jay Alammar によって開発された、**Transformer 系 NLP モデルの内部表現と寄与を実際の挙動を全て可視化して表示したツール**。
+
+**可視化粒度**: トークンレベル、レイヤーレベル
 
 * レイヤーごとの活性化パターン
 * トークン単位の寄与度
@@ -145,6 +182,8 @@ Jay Alammar によって開発された、**Transformer 系 NLP モデルの内�
 
 NVIDIA によって開発された、**大規模言語・音声モデルの構築と解析のためのフレームワーク**。
 
+**可視化粒度**: レイヤーレベル、モジュールレベル
+
 * モデルのモジュール構成とブロック単位の設計
 * 中間層表現・出力挙動の解析
 * 学習・推論過程における内部状態の確認
@@ -155,6 +194,8 @@ NVIDIA によって開発された、**大規模言語・音声モデルの構�
 ### **[Transformer Explainer-2024](https://github.com/poloclub/transformer-explainer)**
 
 Georgia Tech の Polo Club of Data Science によって開発された、**テキスト生成 Transformer の内部動作を段階的に可視化するツール**。
+
+**可視化粒度**: トークンレベル、レイヤーレベル、時間方向
 
 * トークン生成ごとの確率分布の変化
 * Attention・中間表現の逐次的推移
@@ -167,6 +208,8 @@ Georgia Tech の Polo Club of Data Science によって開発された、**テ�
 
 Reduan Achtibat ら（Fraunhofer Heinrich-Hertz-Institute）によって開発された、**Transformer モデルに対する Layer-wise Relevance Propagation (LRP) による説明可能 AI ツール**（ICML 2024）。
 
+**可視化粒度**: トークンレベル、ニューロンレベル、レイヤーレベル
+
 * AttnLRP（Attention-Aware LRP）による入力トークン・内部ニューロンへの忠実なアトリビューション
 * 単一の backward pass で計算可能な効率的な実装
 * LLaMA 2/3、Gemma 3、Qwen 2、BERT、GPT-2、Vision Transformers など幅広いモデルに対応
@@ -178,6 +221,8 @@ Reduan Achtibat ら（Fraunhofer Heinrich-Hertz-Institute）によって開発�
 ### **[Circuit Tracer-2025](https://github.com/safety-research/circuit-tracer)**
 
 Anthropic によって開発された、**LLM の内部「思考回路（回路トレース）」を可視化・解析するツール**。
+
+**可視化粒度**: トークンレベル、ニューロンレベル、ヘッドレベル、回路レベル
 
 * 入力トークンから出力へのアトリビューション・グラフ
 * Attention / MLP / Neuron を横断した回路グラフの可視化
