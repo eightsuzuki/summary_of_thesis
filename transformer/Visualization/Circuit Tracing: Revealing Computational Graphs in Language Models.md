@@ -3,7 +3,7 @@
 **著者**: Anthropic Research Team  
 **arXiv**: [arXiv:2402.17764](https://arxiv.org/abs/2402.17764)
 
-![alt text](<../Interpretability/image/Circuit Tracing: Revealing Computational Graphs in Language Models/image.png>) 
+![alt text](./../Interpretability/image/Circuit%20Tracing:%20Revealing%20Computational%20Graphs%20in%20Language%20Models/image.png) 
 
 ## 1. 背景と目的
 
@@ -26,7 +26,7 @@
   Attribution Graph構築には線形伝播が前提です。CLTでは非線形性を JumpReLU と Error Node のみに限定し、Attention や LayerNorm を固定することで、寄与の厳密な算出を可能にします。
 
 ## 2. CLTによる置換モデルと線形化
-![alt text](<../Interpretability/image/Circuit Tracing: Revealing Computational Graphs in Language Models/image-1.png>)
+![alt text](./../Interpretability/image/Circuit%20Tracing:%C2%A0Revealing%C2%A0Computational%C2%A0Graphs%C2%A0in%C2%A0Language%C2%A0Models/image-1.png)
 ### 2.1 Cross‑Layer Transcoder の構造
 
 元のMLP \(f^\ell_{\mathrm{MLP}}\) を、以下の三段階で置換します：
@@ -49,7 +49,7 @@
 - **結果**: 置換後モデルは元モデルと同等の生成品質を維持し、最大50%のプロンプトで同一トークンを生成（可解釈性と性能の両立）。 citeturn1view0
 
 ### 2.2 局所置換モデル (Local Replacement Model)
-![alt text](<../Interpretability/image/Circuit Tracing: Revealing Computational Graphs in Language Models/image-2.png>)
+![alt text](./../Interpretability/image/Circuit%20Tracing:%C2%A0Revealing%C2%A0Computational%C2%A0Graphs%C2%A0in%C2%A0Language%C2%A0Models/image-2.png)
 1. プロンプト \(p\) で一度推論し、AttentionパターンとLayerNorm係数を**固定**。  
 2. CLT出力との差分を**Error Node**としてバイアス項へ注入。  
 3. 非線形性は JumpReLU と Error Node のみ、全体を全結合線形伝播モデルと見なす。  

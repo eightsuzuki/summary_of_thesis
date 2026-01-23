@@ -24,11 +24,11 @@
 
 ### **主な結果**
 
-![image.png](<../In-Context Learning/image/ICLR In-Context Learning of Representations 173821c4096b80a5abfbc12d2c012e42/image.png>)
+![image.png](./../In-Context%20Learning/image/ICLR%20In-Context%20Learning%20of%20Representations%20173821c4096b80a5abfbc12d2c012e42/image.png)
 
-![image.png](<../In-Context Learning/image/ICLR In-Context Learning of Representations 173821c4096b80a5abfbc12d2c012e42/image 1.png>)
+![image.png](./../In-Context%20Learning/image/ICLR%20In-Context%20Learning%20of%20Representations%20173821c4096b80a5abfbc12d2c012e42/image%201.png)
 
-![image.png](<../In-Context Learning/image/ICLR In-Context Learning of Representations 173821c4096b80a5abfbc12d2c012e42/image 2.png>)
+![image.png](./../In-Context%20Learning/image/ICLR%20In-Context%20Learning%20of%20Representations%20173821c4096b80a5abfbc12d2c012e42/image%202.png)
 
 ### **内部表現の可視化**
 
