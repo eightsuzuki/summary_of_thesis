@@ -3,7 +3,8 @@
 **著者**: Avanti Shrikumar, Peyton Greenside, Anshul Kundaje  
 **公開**: PMLR 70 (ICML 2017)  
 **DOI**: 10.48550/arXiv.1704.02685  
-**リンク**: [arXiv:1704.02685](https://arxiv.org/abs/1704.02685)
+**リンク**: [arXiv:1704.02685](https://arxiv.org/abs/1704.02685)  
+**注**: この論文はDeepLIFTの新しい版です。古い版（arXiv:1605.01713）も存在しますが、本論文が推奨されています。
 
 DeepLIFTは、参照（baseline）入力 \(x_0\) に対する「差分」をネットワーク全体に逆伝播し、出力差分 \(\Delta f = f(x)-f(x_0)\) を入力差分の貢献度の総和として厳密に分解する手法です。勾配が0になる領域でも動作し、単一の逆伝播で計算できます。
 
