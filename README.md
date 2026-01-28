@@ -5,7 +5,8 @@
 ## ディレクトリ構成（概要）
 
 - `XAI/`
-  - 画像系・モデル非依存の説明手法のサマリー（Saliency/CAM/Grad-CAM/IG/LRP/DeepLIFT/LIME/SHAP/Influence Functions/RAP ほか）
+  - 画像系・モデル非依存の説明手法のサマリー（Saliency/CAM/Grad-CAM/IG/LRP/DeepLIFT/LIME/SHAP/Influence Functions/RAP/IJ ほか）
+  - **統合勾配法におけるベクトル値特徴量寄与**のサーベイ（IJ, DecompX, Jacobian Scopes, BIA, J6 等）: `XAI/統合勾配法におけるベクトル値特徴量寄与_サーベイ.md`
   - 比較表と簡易年表: `XAI/README.md`
 - `dimensionality_reduction/`
   - 次元削減（PCA/ICA/t-SNE/UMAP/Isomap/LLE/HLLE/Laplacian Eigenmaps/Diffusion Maps/Kernel PCA/MDS/NMF/Autoencoders/PHATE）

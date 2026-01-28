@@ -14,6 +14,7 @@ This directory collects summaries of explanation methods for machine learning an
 | Deep Taylor Decomposition | Taylor expansion | Model internals | Conservation via Taylor | Theoretical foundation for LRP | Reference point choice; local approximation |
 | DeepLIFT | Reference-based propagation | Reference input | Completeness on deltas | Handles saturation; fast | Baseline choice sensitive |
 | IG (Integrated Gradients) | Path integral | Gradients + baseline | Implementation invariance | Axiomatic guarantees | Baseline, path choice |
+| IJ (Integrated Jacobians) | Path integral (Jacobian) | 2 inputs, encoder | Pair-wise completeness | Siamese pair attribution; exact sum = prediction | 2-input only; reference must give zero |
 | LIME | Local surrogate | Black-box access | Local fidelity (weighted) | Model-agnostic; flexible | Sampling/instability |
 | LORE | Local rule-based | Black-box access | Local fidelity (rule-based) | Decision + counterfactual rules; GA-based sampling | GA parameters; rule extraction complexity |
 | SHAP | Additive Shapley | Black-box or model-specific | Shapley axioms | Unified theory; TreeSHAP exact | Costly; background choice |
@@ -30,6 +31,7 @@ This directory collects summaries of explanation methods for machine learning an
 - 2018: Deep Taylor Decomposition – theoretical foundation for LRP via Taylor expansion.
 - 2016/2017: IG (axiomatic path), DeepLIFT (reference deltas), LIME (local surrogates).
 - 2017: SHAP – additive Shapley unification; Tree/Kernel/Deep variants.
+- 2023: IJ (Integrated Jacobians, Moeller et al.) – attribution for Siamese encoders; pair-wise interaction via integrated Jacobian; inclusion–exclusion for 2-input case.
 - 2018: LORE – local rule-based explanations with decision and counterfactual rules; genetic algorithm for neighborhood generation.
 - 2016–2019: Grad-CAM series – class-discriminative localization in CNNs.
 - 2017: Influence Functions – training-point responsibility analysis.
@@ -38,3 +40,8 @@ This directory collects summaries of explanation methods for machine learning an
 - 2025: Attribution Graphs – graph-based visualization of information flow in Transformers.
 
 See individual markdown files in this folder for equations and details.
+
+## Surveys and overviews
+
+- **[統合勾配法におけるベクトル値特徴量寄与_サーベイ.md](./統合勾配法におけるベクトル値特徴量寄与_サーベイ.md)**  
+  IG のスカラー化の限界と、出力をベクトルとして扱う手法（Integrated Jacobians, DecompX, Jacobian Scopes, BIA, J6 など）の網羅的サーベイ。元レポート: リポジトリルートの `統合勾配法におけるベクトル値特徴量寄与：高次元出力および潜在表現の解釈に向けた理論的拡張と実践.md`。
